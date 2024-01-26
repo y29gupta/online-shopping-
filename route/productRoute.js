@@ -1,0 +1,25 @@
+const ExpressFormidable = require('express-formidable')
+const productController = require('../controller/productController')
+const auth = require('../middleware/auth')
+
+const route=require('express').Router()
+
+route.post('/add-product', ExpressFormidable() ,productController.addProduct)
+route.get('/productList',productController.getProduct)
+route.get('/singleProduct/:slug',productController.singleproduct)
+route.put('/update/:id', ExpressFormidable(), productController.updateProduct)
+
+route.get('/photo/:pid',productController.getphoto)
+route.delete('/delete/:id',productController.deleteProduct)
+route.post('/filter-product',productController.productfilter)
+route.get('/product-count',productController.productcountController)
+route.get('/productPerPage/:page',productController.productListPerpage)
+route.get(`/search/:keyword`,productController.searchController)
+route.get("/similerProduct/:pid/:cid",productController.similerProduct)
+route.post('/checkout',productController.checkout)
+route.post('/payment_verify', auth ,productController.paymentVerify)
+route.get('/get_api_key',productController.getKey)
+route.get('/getorders',auth,productController.getOrderList)
+route.get('/totalorders',auth,productController.totalorder)
+route.put('/updatestatus',auth,productController.updateOrderStatus)
+module.exports=route
