@@ -45,7 +45,7 @@ function ProductListTable(props) {
                                                         <TableCell align="center">
                                                             <NavLink to={`/product-details/${row?.slug}`}>
 
-                                                                <img src={`http://localhost:8080/api/product/photo/${row._id}`} alt="" width="60px" height="60px" />
+                                                                <img src={`/api/product/photo/${row._id}`} alt="" width="60px" height="60px" />
                                                             </NavLink>
                                                         </TableCell>
                                                         <TableCell align="center"><Typography commponent="p" style={{fontWeight:"600"}}>{item?.status}</Typography>  </TableCell>

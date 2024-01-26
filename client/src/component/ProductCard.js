@@ -12,7 +12,7 @@ function ProductCard(props) {
 
                 <Card sx={{ width: props.width, marginTop: "20px", marginBottom: '10px' }}>
 
-                    <img src={`http://localhost:8080/api/product/photo/${props.data._id}`} height={props.height} width={props.width} alt="" />
+                    <img src={`/api/product/photo/${props.data._id}`} height={props.height} width={props.width} alt="" />
                     <CardContent>
                         <Typography gutterBottom component="p" style={{ whiteSpace: "nowrap" }}>
                             {props.data.name}

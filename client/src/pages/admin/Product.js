@@ -9,7 +9,7 @@ function Product() {
     const [products,setProducts]=useState()
 
     const getproducts=async ()=>{
-        await axios.get("http://localhost:8080/api/product/productList").then(res=>{
+        await axios.get("/api/product/productList").then(res=>{
             if(res.data.status==true){
                 setProducts(res.data.data)
             }
