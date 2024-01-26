@@ -3,7 +3,6 @@ const mongoose=require('mongoose')
 const cors=require('cors')
 const path=require('path')
 require('dotenv').config()
-const fileUrlToPath=require('url').fileURLToPath()
 
 
 const app=express()
@@ -12,9 +11,6 @@ const app=express()
 const PORT=process.env.PORT ||8080
 
 
-const filename=fileUrlToPath(import.meta.url)
-
-const __dirname=path.dirname(filename)
 app.use(express.urlencoded({extended:true}))
 app.use(express.json())
 app.use(cors())
