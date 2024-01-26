@@ -18,7 +18,7 @@ const [status,setStatus]=useState(false)
 useEffect(()=>{
 
     const authcheck= async()=>{
-            const response=await axios.get('http://localhost:8080/api/auth/user-auth',{
+            const response=await axios.get('/api/auth/user-auth',{
                 headers:{
                     'authorization': user?.token
                 }
