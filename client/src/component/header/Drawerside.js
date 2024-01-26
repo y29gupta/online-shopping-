@@ -1,12 +1,12 @@
-import { Button, Divider, Drawer, Grid, IconButton, List, ListItemButton, ListItemIcon, ListItemText, Typography } from '@mui/material'
+import {  Button, Divider, Drawer, Grid, IconButton, List, ListItemButton, ListItemIcon, ListItemText, Typography } from '@mui/material'
 import React, { useState } from 'react'
 import MenuIcon from '@mui/icons-material/Menu';
 import { navMenu } from '../Menu';
 import { useNavigate } from 'react-router-dom';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
-import HowToRegIcon from '@mui/icons-material/HowToReg';
 import { useDispatch } from 'react-redux';
 import { toggleModel } from '../../redux/features/user/userSlice';
+
 function Drawerside() {
   const [open, setOpen] = useState(false)
   const dispatch = useDispatch()
@@ -41,13 +41,12 @@ function Drawerside() {
               )
             })
           }
-
-
+     
         </List>
         <Divider color="black" />
         <Grid container style={{ position: 'absolute', bottom: "10px" }}>
 
-          <Button onClick={() => dispatch(toggleModel())} startIcon={<AccountCircleIcon />} fullWidth variant="filled" size="small" sx={{ fontWeight: '600', color: "secondary.main" }}>
+          <Button onClick={() => dispatch(toggleModel('/'))} startIcon={<AccountCircleIcon />} fullWidth variant="filled" size="small" sx={{ fontWeight: '600', color: "secondary.main" }}>
             Login
           </Button>
           {/* <Button startIcon={<HowToRegIcon/>} fullWidth variant="filled" size="small"   sx={{fontWeight:'600',color:"secondary.main"}}>

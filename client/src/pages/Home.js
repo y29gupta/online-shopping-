@@ -138,16 +138,16 @@ function Home() {
         </Grid>
 
         <Grid item xs={12} md={10}>
-          <Typography variant='h5' component="p" sx={{ textAlign: "center", mt: "10px", backgroundColor: "gray", mr: "5px" }}>All Product</Typography>
+          <Typography variant='h5' component="p" sx={{ textAlign: "center", mt: "10px", backgroundColor: "darkgray", mr: "5px" }}>All Product</Typography>
           <Grid container spacing={4.5}>
             {
               product && product.map((item) => {
                 return (
                   <>
-                    <Grid item md={3} sm={4} xs={12} >
+                    <Grid item  md={3} sm={4} xs={6} >
                       <Paper elevation={0} >
                        
-                        <ProductCard height="200px" width="200px" data={item} />
+                        <ProductCard height="200px" width="100%" data={item} />
                         {/* </Nav Link> */}
                       </Paper>
                     </Grid>

@@ -70,11 +70,18 @@ function Navbar() {
       <AppBar position='sticky'>
         <Toolbar style={{
           // background:" rgb(2,0,36)",
-          backgroundColor: "black"
+          backgroundColor: "black",
+          
           // background: "linear-gradient(200deg, rgba(2,0,36,1) 0%, rgba(9,9,121,0.3841911764705882) 35%, rgba(0,212,255,1) 100%)"
         }}>
+          <NavLink to={"/"} >
+
           <img src="logo.png" alt="" style={{ width: "80px", height: "60px" }} />
-          <Typography variant={ismatch ? "h6" : "h4"} style={{ color: "red", fontFamily: "Stylish" }} component="p">Add <span style={{ color: "yellow" }} >To</span> Cart.com</Typography>
+          </NavLink>
+          <NavLink to={"/"} style={{textDecoration:"none"}}>
+
+          <Typography   variant={ismatch ? "h6" : "h4"} style={{ color: "red", fontFamily: "Stylish" }} component="p">Add <span style={{ color: "yellow" }} >To</span> Cart.com</Typography>
+          </NavLink>
           {
             ismatch ? <Drawerside /> : (
               <>

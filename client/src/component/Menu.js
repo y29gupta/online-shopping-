@@ -1,6 +1,7 @@
 
 import CategoryIcon from '@mui/icons-material/Category';
 import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
+import { Badge } from '@mui/material';
 export const navMenu=[
     {
       to:"/",
@@ -19,7 +20,9 @@ export const navMenu=[
       },
       {
         to:"/cart",
-        icon:<ShoppingCartOutlinedIcon sx={{color:"white"}}/>
+        icon:  <Badge color="error" >
+        <ShoppingCartOutlinedIcon sx={{fontSize:"30px",color:"white"}} />
+      </Badge>
       },
     
     // {

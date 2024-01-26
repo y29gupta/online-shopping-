@@ -3,9 +3,9 @@ import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 import ProductCard from '../component/ProductCard'
-import { useDispatch, useSelector } from 'react-redux'
-import { addToCart, cartTotalItem, totalItemPrice } from '../redux/features/productSlice'
-import { toast } from 'react-toastify'
+import { useDispatch } from 'react-redux'
+import { addToCart, cartTotalItem } from '../redux/features/productSlice'
+// import { toast } from 'react-toastify'
 import CartToggleAmount from '../component/CartToggleAmount'
 
 function ProductDetails() {
@@ -13,7 +13,6 @@ function ProductDetails() {
     const [product, setProduct] = useState()
     const [relatedProduct,setRelatedProduct]=useState([])
     const navigate=useNavigate()
-    const {cart}=useSelector(state=>state.product)
     const dispatch= useDispatch()
     const [amount,setAmount]=useState(1)
 
@@ -40,7 +39,7 @@ function ProductDetails() {
 
     useEffect(() => {
         getProductDetails()
-    }, [params])
+    },[params])
 
     const handleCart= async (product,amount)=>{
         // const itemInCart=cart.some(item=>item._id===product._id)
@@ -58,12 +57,12 @@ function ProductDetails() {
     return (
         <>
             <Grid container spacing={5} mt={1} mb={2}>
-                <Grid item md={4} >
+                <Grid item xs={12} md={4} >
                     <Box  >
                         <Paper   elevation={1} >
 
 
-                            <img src={`/api/product/photo/${product?._id}`} height="350px" width="380px" alt="" />
+                            <img src={`/api/product/photo/${product?._id}`} height="350px" width="100%" alt="" />
                             <Box mt={2} display="flex" justifyContent="space-around" style={{marginBottom:"10px"}}>
 
                                 <div>

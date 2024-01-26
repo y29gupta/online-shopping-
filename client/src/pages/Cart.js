@@ -109,7 +109,7 @@ function Cart() {
     return (
         <>
             <Grid container spacing={4}>
-                <Grid item md={7} >
+                <Grid item xs={12} md={7} >
                     {
                         cart?.length > 0 ? (
                             <>
