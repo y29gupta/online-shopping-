@@ -27,7 +27,7 @@ app.use("/api/auth",require('./route/userRoute'))
 app.use("/api/category",require('./route/categoryRoute'))
 app.use("/api/product",require('./route/productRoute'))
 
-app.get("*",function(req,res){
+app.get("*",function(__,res){
     res.sendFile(path.join(__dirname,'/client/build/index.html'))
 })
 // app.use('/api/auth',require('./route/userRoute'))
