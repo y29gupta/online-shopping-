@@ -22,7 +22,7 @@ function OrderList() {
     }
     useEffect(() => {
         gettotalOrder()
-    }, [order])
+    }, [])
 
     const handlestatus = async (e,id)=>{
         
